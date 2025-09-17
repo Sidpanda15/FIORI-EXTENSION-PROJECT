@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="HCM_LEAVE_REQ_CREATE_SRV" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="AbsenceType" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeID"/>
+					<PropertyRef Name="AbsenceTypeCode"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personnel No."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="InfoType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Infotype" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="AbsenceTypeCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtype"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="80" Name="AbsenceTypeName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ActionCreate" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ActionDelete" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ActionModify" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ApproverReadOnlyInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ApproverVisibleInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="AllowEmptyApprover" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="AllowedDurationPartialDayInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="AllowedDurationSingleDayInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="AllowedDurationMultipleDayInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="NoteVisibleInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="DefaultType" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="AttachmentEnabled" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="AttachmentMandatory" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="AttachMaxSize" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="AttachRestrictFileType" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="AttachSupportFileType" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="TimeUnitCode" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Time unit/meas."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="TimeUnitName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description"
+					sap:sortable="false" sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_AbsenceTypeTimeAccount" Name="absenceTypeTimeAccount"
+					Relationship="HCM_LEAVE_REQ_CREATE_SRV.AbsenceTypeTimeAccount" ToRole="ToRole_AbsenceTypeTimeAccount"/>
+			</EntityType>
+			<EntityType Name="Configuration" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeID"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personnel No."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="EmployeeName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Full Name"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="DefaultStartDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Start date"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="6" Name="DefaultStartTime" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Time"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="DefaultEndDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="End Date"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="6" Name="DefaultEndTime" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Time"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="DefaultFilterStartDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
+					sap:label="Start date" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="DefaultApproverEmployeeID" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Personnel No." sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="DefaultApproverEmployeeName" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Full Name" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="RecordInClockHoursAllowedInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="RecordInClockTimesAllowedInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE"
+					sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="ConcurrentEmployment" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Pernr"/>
+				</Key>
+				<Property MaxLength="8" Name="Pernr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personnel No." sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="255" Name="AssignmentText" Type="Edm.String" sap:creatable="false" sap:label="Text" sap:sortable="false"
+					sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="FileAttachment" m:HasStream="true" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeID"/>
+					<PropertyRef Name="LeaveRequestId"/>
+					<PropertyRef Name="ArchivDocId"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personnel No."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="32" Name="LeaveRequestId" Nullable="false" Type="Edm.String" sap:label="Document ID" sap:sortable="false"/>
+				<Property Name="FilePath" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+				<Property Name="FileName" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+				<Property MaxLength="128" Name="FileType" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+				<Property Name="FileSizeDescr" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+				<Property MaxLength="12" Name="FileSize" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+				<Property Name="FileContent" Type="Edm.Binary" sap:filterable="false" sap:sortable="false"/>
+				<Property Name="FileUrl" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+				<Property MaxLength="1" Name="DeleteEnabled" Type="Edm.String" sap:filterable="false" sap:label="TRUE" sap:sortable="false"/>
+				<Property MaxLength="12" Name="CreateUser" Type="Edm.String" sap:filterable="false" sap:label="User Name" sap:sortable="false"/>
+				<Property Name="CreateDate" Precision="7" Type="Edm.DateTime" sap:filterable="false" sap:label="Storage date" sap:sortable="false"/>
+				<Property Name="CreateTime" Precision="0" Type="Edm.Time" sap:filterable="false" sap:label="Time" sap:sortable="false"/>
+				<Property MaxLength="40" Name="ArchivDocId" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Doc. ID"
+					sap:sortable="false"/>
+				<Property MaxLength="1" Name="AttachmentStatus" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+				<Property MaxLength="3" Name="FileSeqnr" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+				<Property MaxLength="132" Name="Action" Type="Edm.String" sap:filterable="false" sap:label="URL" sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="Approver" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ApproverEmployeeID"/>
+				</Key>
+				<Property MaxLength="8" Name="ApproverEmployeeID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personnel no."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="80" Name="ApproverEmployeeName" Type="Edm.String" sap:creatable="false" sap:label="Empl./appl.name"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="80" Name="ApproverUserID" Type="Edm.String" sap:creatable="false" sap:label="System ID" sap:sortable="false"
+					sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="LeaveRequest" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeID"/>
+					<PropertyRef Name="RequestID"/>
+					<PropertyRef Name="ChangeStateID"/>
+					<PropertyRef Name="LeaveKey"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personnel No."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="32" Name="RequestID" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Document ID"
+					sap:sortable="false"/>
+				<Property Name="ChangeStateID" Nullable="false" Type="Edm.Int32" sap:filterable="false" sap:label="Doc. Version" sap:sortable="false"/>
+				<Property MaxLength="4" Name="InfoType" Nullable="false" Type="Edm.String" sap:label="Infotype" sap:sortable="false"/>
+				<Property MaxLength="50" Name="LeaveKey" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="c" sap:sortable="false"/>
+				<Property Name="ActionCode" Nullable="false" Type="Edm.Int16" sap:filterable="false" sap:label="Action Code" sap:sortable="false"/>
+				<Property Name="ProcessCheckOnlyInd" Type="Edm.Boolean" sap:filterable="false" sap:label="TRUE" sap:sortable="false"/>
+				<Property MaxLength="12" Name="StatusCode" Type="Edm.String" sap:creatable="false" sap:label="Document Status" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="StatusName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Char20"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="AbsenceTypeCode" Type="Edm.String" sap:filterable="false" sap:label="Att./abs. type" sap:sortable="false"/>
+				<Property MaxLength="40" Name="AbsenceTypeName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="A/A type text"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="StartDate" Precision="0" Type="Edm.DateTime" sap:label="Start date" sap:sortable="false"/>
+				<Property MaxLength="6" Name="StartTime" Type="Edm.String" sap:filterable="false" sap:label="Time" sap:sortable="false"/>
+				<Property Name="EndDate" Precision="0" Type="Edm.DateTime" sap:label="End Date" sap:sortable="false"/>
+				<Property MaxLength="6" Name="EndTime" Type="Edm.String" sap:filterable="false" sap:label="Time" sap:sortable="false"/>
+				<Property Name="WorkingHoursDuration" Precision="7" Scale="2" Type="Edm.Decimal" sap:filterable="false" sap:label="Annual hours"
+					sap:sortable="false"/>
+				<Property Name="WorkingDaysDuration" Precision="6" Scale="2" Type="Edm.Decimal" sap:filterable="false" sap:label="Att./abs. days"
+					sap:sortable="false"/>
+				<Property MaxLength="3" Name="TimeUnit" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Time Unit"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="TimeUnitCode" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Short text"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="ApproverEmployeeID" Type="Edm.String" sap:filterable="false" sap:label="Personnel No." sap:sortable="false"/>
+				<Property MaxLength="80" Name="ApproverEmployeeName" Type="Edm.String" sap:filterable="false" sap:label="Full Name" sap:sortable="false"/>
+				<Property Name="Notes" Type="Edm.String" sap:filterable="false" sap:sortable="false"/>
+				<Property Name="ActionDeleteInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ActionModifyInd" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="LastChangeDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Date"
+					sap:sortable="false"/>
+				<Property MaxLength="6" Name="LastChangeTime" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Time"
+					sap:sortable="false"/>
+				<Property MaxLength="80" Name="LastChangeEmployeeName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Full Name"
+					sap:sortable="false"/>
+				<Property Name="SequenceID" Type="Edm.Int16" sap:creatable="false" sap:filterable="false" sap:label="Int2" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="LeaveRequestType" Type="Edm.Int16" sap:creatable="false" sap:filterable="false" sap:label="Int2" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="FirstSubmissionDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Date"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="6" Name="FirstSubmissionTime" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Time"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="1" Name="AttachmentsExist" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="TRUE"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="AttachmentDetails" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_LeaveRequestFileAttachment" Name="LeaveRequestFileAttachment"
+					Relationship="HCM_LEAVE_REQ_CREATE_SRV.LeaveRequestFileAttachment" ToRole="ToRole_LeaveRequestFileAttachment"/>
+			</EntityType>
+			<EntityType Name="TimeAccount" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeID"/>
+					<PropertyRef Name="TimeAccountTypeCode"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personnel No."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="FilterStartDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:label="Start date" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="FilterEndDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:label="End Date" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="FilterAbsenceTypeCode" Type="Edm.String" sap:creatable="false" sap:label="Subtype" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ProcessingStartDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Start date"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ProcessingEndDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="End Date"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="TimeAccountTypeCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Time Account" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="TimeAccountTypeName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Quota text"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="DeductionStartDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Date"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="DeductionEndDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Date"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="TimeUnitCode" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Time Unit"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="TimeUnitName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Short text"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BalanceEntitlementQuantity" Precision="10" Scale="5" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quota number" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BalanceUsedQuantity" Precision="10" Scale="5" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quota number" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BalanceApprovedQuantity" Precision="10" Scale="5" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quota number" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BalanceRequestedQuantity" Precision="10" Scale="5" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quota number" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BalancePlannedQuantity" Precision="10" Scale="5" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quota number" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BalanceAvailableQuantity" Precision="10" Scale="5" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quota number" sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="WorkSchedule" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeID"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personnel No."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="StartDate" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:label="Start date"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:label="End Date" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="StatusValues" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+			</EntityType>
+			<Association Name="LeaveRequestFileAttachment" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_LeaveRequestFileAttachment" Type="HCM_LEAVE_REQ_CREATE_SRV.LeaveRequest"/>
+				<End Multiplicity="*" Role="ToRole_LeaveRequestFileAttachment" Type="HCM_LEAVE_REQ_CREATE_SRV.FileAttachment"/>
+			</Association>
+			<Association Name="AbsenceTypeTimeAccount" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_AbsenceTypeTimeAccount" Type="HCM_LEAVE_REQ_CREATE_SRV.AbsenceType"/>
+				<End Multiplicity="*" Role="ToRole_AbsenceTypeTimeAccount" Type="HCM_LEAVE_REQ_CREATE_SRV.TimeAccount"/>
+			</Association>
+			<EntityContainer Name="HCM_LEAVE_REQ_CREATE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json">
+				<EntitySet EntityType="HCM_LEAVE_REQ_CREATE_SRV.AbsenceType" Name="AbsenceTypeCollection" sap:addressable="false" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="HCM_LEAVE_REQ_CREATE_SRV.Configuration" Name="ConfigurationCollection" sap:addressable="false"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="HCM_LEAVE_REQ_CREATE_SRV.ConcurrentEmployment" Name="ConcurrentEmploymentSet" sap:addressable="false"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="HCM_LEAVE_REQ_CREATE_SRV.FileAttachment" Name="FileAttachmentSet" sap:content-version="1"/>
+				<EntitySet EntityType="HCM_LEAVE_REQ_CREATE_SRV.Approver" Name="ApproverCollection" sap:addressable="false" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="HCM_LEAVE_REQ_CREATE_SRV.LeaveRequest" Name="LeaveRequestCollection" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet EntityType="HCM_LEAVE_REQ_CREATE_SRV.TimeAccount" Name="TimeAccountCollection" sap:addressable="false" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="HCM_LEAVE_REQ_CREATE_SRV.WorkSchedule" Name="WorkScheduleCollection" sap:addressable="false" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<AssociationSet Association="HCM_LEAVE_REQ_CREATE_SRV.AbsenceTypeTimeAccount" Name="AbsenceTypeTimeAccount_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AbsenceTypeCollection" Role="FromRole_AbsenceTypeTimeAccount"/>
+					<End EntitySet="TimeAccountCollection" Role="ToRole_AbsenceTypeTimeAccount"/>
+				</AssociationSet>
+				<AssociationSet Association="HCM_LEAVE_REQ_CREATE_SRV.LeaveRequestFileAttachment" Name="LeaveRequestFileAttachment_AssocSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="LeaveRequestCollection" Role="FromRole_LeaveRequestFileAttachment"/>
+					<End EntitySet="FileAttachmentSet" Role="ToRole_LeaveRequestFileAttachment"/>
+				</AssociationSet>
+			</EntityContainer>
+			<atom:link href="http://localhost/DUMMY_SERVICE/$metadata" rel="self" xmlns:atom="http://www.w3.org/2005/Atom"/>
+			<atom:link href="http://localhost/DUMMY_SERVICE/$metadata" rel="latest-version" xmlns:atom="http://www.w3.org/2005/Atom"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
